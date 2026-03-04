@@ -51,7 +51,7 @@ driver-drowsiness-detection/
 
 ---
 
-## System Pipeline 🧠
+## System Pipeline 
 
 ```
 Camera Frame
@@ -91,18 +91,18 @@ Final drowsiness detection is performed using **fusion logic combined with tempo
 ## Example Output 📷
 
 <p align="center">
- <img src="screenshots/Eye_Yawn_being_detected.jpg" width="45%">
-  <img src="screenshots/eye_detection_alert.jpg" width="45%">
+ <img src="screenshots/Eye_Yawn_being_detected.jpg" width="43%">
+  <img src="screenshots/eye_detection_alert.jpg" width="43%">
     
 </p>
 
 <p align="center">
-  <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
-  <img src="screenshots/yawn_detection_alert.jpg" width="45%">
+  <img src="screenshots/drowsiness_alert_specs.jpg" width="43%">
+  <img src="screenshots/yawn_detection_alert.jpg" width="43%">
 </p>
 
 <p align="center">
-<img src="screenshots/face_not_detected.jpg" width="45%">
+<img src="screenshots/face_not_detected.jpg" width="43%">
 
 </p>
 
@@ -169,7 +169,7 @@ If drowsiness is detected, an **alarm sound** will be triggered.
 
 ---
 
-## Results 📈
+## Results 
 
 | Model                | Accuracy |
 | -------------------- | -------- |
@@ -188,6 +188,6 @@ If drowsiness is detected, an **alarm sound** will be triggered.
 
 ---
 
-## Author 👨‍💻
+## Author 👨
 
 Helinia Sarah
