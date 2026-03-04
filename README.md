@@ -82,21 +82,22 @@ Final drowsiness detection is performed using **fusion logic combined with tempo
 ##Example output
 
 **Descriptions**
-
-* **Eye Detection** – CNN model detects eye closure.
 * **Eye + Yawn Detection** – Simultaneous monitoring of eye state and yawning.
+* **Eye Detection** – CNN model detects eye closure.
+* **Drowsiness Alert(Specs)** – Alert triggered after consecutive frames of drowsiness even when wearing spectacles
 * **Yawn Detection Alert** – Yawn detected using CNN + MAR.
-* **Drowsiness Alert** – Alert triggered after consecutive frames of drowsiness.
+.
 * **Face Not Detected** – System waits until a face is detected.
 ## Example Output 📷
 
 <p align="center">
+ <img src="screenshots/Eye_Yawn_being_detected.jpg" width="45%">
   <img src="screenshots/eye_detection_alert.jpg" width="45%">
-    <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
+    
 </p>
 
 <p align="center">
-  <img src="screenshots/Eye_Yawn_being_detected.jpg" width="45%">
+  <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
   <img src="screenshots/yawn_detection_alert.jpg" width="45%">
 </p>
 
