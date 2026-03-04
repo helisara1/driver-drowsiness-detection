@@ -1,11 +1,11 @@
-# Driver Drowsiness Detection System 🚗😴
+# Driver Drowsiness Detection System 
 
 A **real-time computer vision system** that detects driver fatigue using **eye closure detection and yawn detection**.
 The system monitors the driver's face through a webcam and triggers an **audio alert** when signs of drowsiness are detected.
 
 ---
 
-## Features ✨
+## Features 
 
 * CNN-based **eye open/closed detection**
 * CNN-based **yawn detection**
@@ -15,7 +15,7 @@ The system monitors the driver's face through a webcam and triggers an **audio a
 
 ---
 
-## Tech Stack 🛠
+## Tech Stack 
 
 * **Python**
 * **TensorFlow / Keras**
@@ -25,7 +25,7 @@ The system monitors the driver's face through a webcam and triggers an **audio a
 
 ---
 
-## Project Structure 📂
+## Project Structure 
 
 ```
 driver-drowsiness-detection/
@@ -39,7 +39,6 @@ driver-drowsiness-detection/
 │   ├── haarcascade_frontalface_default.xml
 │   └── haarcascade_mcs_mouth.xml
 │
-├── assets/
 │   └── alarm.wav
 │
 ├── notebooks/
@@ -52,18 +51,72 @@ driver-drowsiness-detection/
 
 ---
 
-## Dataset 📊
+## System Pipeline 🧠
 
-The dataset used for training is the **MRL Eye Dataset**.
+```
+Camera Frame
+      ↓
+Face Detection (dlib)
+      ↓
+Facial Landmark Extraction
+      ↓
+Feature Extraction (EAR / MAR)
+      ↓
+CNN Predictions (Eye State & Yawn Detection)
+      ↓
+Fusion Logic (CNN + EAR/MAR)
+      ↓
+Temporal Filtering (Consecutive Frame Analysis)
+      ↓
+Drowsiness Alert + Audio Alarm
+```
+## Methodology 
+
+The proposed system uses a **hybrid drowsiness detection approach** that combines deep learning with geometric facial analysis.
+
+A **MobileNetV2-based CNN** is trained to classify eye state (open/closed) and yawning.
+To improve robustness in real-time conditions, **geometric features — Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR)** are also computed from facial landmarks.
+
+Final drowsiness detection is performed using **fusion logic combined with temporal filtering**, ensuring that alerts are triggered only when fatigue indicators persist across multiple frames.
+
+## Example Output 📷
+
+The following screenshots demonstrate the real-time driver monitoring system detecting eye closure, yawning, and triggering alerts using hybrid CNN + EAR/MAR fusion.
+
+<p align="center">
+  <img src="screenshots/face_not_detected.jpg" width="45%">
+  <img src="screenshots/eye_detection_alert.jpg" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/Eye_Yawn_being_detected.jpg" width="45%">
+  <img src="screenshots/yawn_detection_alert.jpg" width="45%">
+</p>
+
+<p align="center">
+  <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
+</p>
+
+**Descriptions**
+
+* **Face Not Detected** – System waits until a face is detected.
+* **Eye Detection** – CNN model detects eye closure.
+* **Eye + Yawn Detection** – Simultaneous monitoring of eye state and yawning.
+* **Yawn Detection Alert** – Yawn detected using CNN + MAR.
+* **Drowsiness Alert** – Alert triggered after consecutive frames of drowsiness.
+
+## Dataset 
+
+The dataset used for Eye training is the **MRL Eye Dataset**.
 
 Dataset source:
 https://www.kaggle.com/datasets/serenaraju/mrl-eye-dataset
-
+The dataset used for Yawn training is the also from kaggle.
 ⚠️ Dataset is **not included in this repository** due to GitHub size limits.
 
 ---
 
-## Installation ⚙️
+## Installation 
 
 Clone the repository:
 
@@ -80,8 +133,7 @@ pip install -r requirements.txt
 
 ---
 
-## Training Models 🧠
-
+## Training Models 
 Train the eye detection model:
 
 ```bash
@@ -96,7 +148,7 @@ python src/train_yawn_model.py
 
 ---
 
-## Run Real-Time Detection 🎥
+## Run Real-Time Detection 
 
 ```bash
 python src/detect_drowsiness.py
@@ -117,7 +169,7 @@ If drowsiness is detected, an **alarm sound** will be triggered.
 
 ---
 
-## Future Improvements 🚀
+## Future Improvements 
 
 * Build a **REST API backend**
 * Add **web dashboard for monitoring**
@@ -128,5 +180,4 @@ If drowsiness is detected, an **alarm sound** will be triggered.
 
 ## Author 👨‍💻
 
-Your Name
-GitHub: https://github.com/yourusername
+Helinia Sarah
