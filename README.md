@@ -79,13 +79,20 @@ To improve robustness in real-time conditions, **geometric features — Eye Aspe
 
 Final drowsiness detection is performed using **fusion logic combined with temporal filtering**, ensuring that alerts are triggered only when fatigue indicators persist across multiple frames.
 
+##Example output
+
+**Descriptions**
+
+* **Eye Detection** – CNN model detects eye closure.
+* **Eye + Yawn Detection** – Simultaneous monitoring of eye state and yawning.
+* **Yawn Detection Alert** – Yawn detected using CNN + MAR.
+* **Drowsiness Alert** – Alert triggered after consecutive frames of drowsiness.
+* **Face Not Detected** – System waits until a face is detected.
 ## Example Output 📷
 
-The following screenshots demonstrate the real-time driver monitoring system detecting eye closure, yawning, and triggering alerts using hybrid CNN + EAR/MAR fusion.
-
 <p align="center">
-  <img src="screenshots/face_not_detected.jpg" width="45%">
   <img src="screenshots/eye_detection_alert.jpg" width="45%">
+    <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
 </p>
 
 <p align="center">
@@ -94,16 +101,18 @@ The following screenshots demonstrate the real-time driver monitoring system det
 </p>
 
 <p align="center">
-  <img src="screenshots/drowsiness_alert_specs.jpg" width="45%">
+<img src="screenshots/face_not_detected.jpg" width="45%">
+
 </p>
 
 **Descriptions**
 
-* **Face Not Detected** – System waits until a face is detected.
-* **Eye Detection** – CNN model detects eye closure.
-* **Eye + Yawn Detection** – Simultaneous monitoring of eye state and yawning.
-* **Yawn Detection Alert** – Yawn detected using CNN + MAR.
-* **Drowsiness Alert** – Alert triggered after consecutive frames of drowsiness.
+* **Face Not Detected** – System waits until a face appears in the frame.
+* **Eye Closed Detection** – CNN + EAR detects prolonged eye closure.
+* **Eye & Yawn Detection** – Monitoring eye state and yawning simultaneously.
+* **Yawn Detection Alert** – MAR + CNN detects yawning.
+* **Drowsiness Alert** – Alarm triggered when fatigue indicators persist.
+
 
 ## Dataset 
 
