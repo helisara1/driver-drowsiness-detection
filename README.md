@@ -79,7 +79,7 @@ To improve robustness in real-time conditions, **geometric features — Eye Aspe
 
 Final drowsiness detection is performed using **fusion logic combined with temporal filtering**, ensuring that alerts are triggered only when fatigue indicators persist across multiple frames.
 
-##Example output
+## Example output
 **Descriptions**
 * **Eye + Yawn Detection** – Simultaneous monitoring of eye state and yawning.
 * **Eye Detection** – CNN model detects eye closure.
@@ -177,6 +177,6 @@ If drowsiness is detected, an **alarm sound** will be triggered.
 
 ---
 
-## Author 👨
+## Author 
 
 Helinia Sarah
